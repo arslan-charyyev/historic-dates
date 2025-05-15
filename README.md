@@ -1,5 +1,8 @@
 # Assignment submission for [onlydigital.ru](https://onlydigital.ru)
 
+[![badge](https://github.com/arslan-charyyev/historic-dates/actions/workflows/deploy.yml/badge.svg)](https://github.com/arslan-charyyev/historic-dates/actions/workflows/deploy.yml)
+![GitHub License](https://img.shields.io/github/license/arslan-charyyev/historic-dates)
+
 > [!NOTE]
 > 🚀 Check out the deployed project at:
 >
@@ -58,5 +61,8 @@ The development server will be available at: http://localhost:8080
 
 ## 🚀 Deployment
 
-Push to the `master` branch triggers [deploy.yml](.github/workflows/deploy.yml) workflow,
-which publishes the website on GitHub pages.
+Git commit triggers the `pnpm lint` check and aborts a commit if any issues are found.
+Powered by [husky](https://typicode.github.io/husky/).
+
+Git push to the `master` branch triggers [deploy.yml](.github/workflows/deploy.yml) workflow,
+which publishes the website on GitHub Pages.
