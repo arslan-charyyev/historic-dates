@@ -20,6 +20,8 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/arslan-charyyev/historic-dates)
 
+After the Codespace has finished loading, open the `Run and Debug` panel, and start the `dev` configuration.
+
 ## 🏗️ Local development
 
 ### Requirements
@@ -40,7 +42,7 @@
 pnpm dev
 ```
 
-Or hit the `start` Run/Debug Configuration if working in a Jetbrains IDE.
+Or hit the `dev` Run/Debug Configuration if working in a Jetbrains IDE or VS Code.
 
 The development server will be available at: http://localhost:8080
 
