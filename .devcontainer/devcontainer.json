@@ -1,4 +1,5 @@
 {
   "image": "mcr.microsoft.com/devcontainers/javascript-node:latest",
-  "features": {}
+  "features": {},
+  "postStartCommand": "pnpm install --offline"
 }

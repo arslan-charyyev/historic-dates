@@ -8,6 +8,10 @@
 - React.js
 - Styled Components
 
+## ☁️ Remote development
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/arslan-charyyev/historic-dates)
+
 ## 🏗️ Local development
 
 ### Requirements
@@ -33,7 +37,7 @@ Or hit the `start` Run/Debug Configuration if working in a Jetbrains IDE.
 #### Miscellaneous
 
 | Command             | Description                                  |
-| ------------------- | -------------------------------------------- |
+|---------------------|----------------------------------------------|
 | `pnpm build`        | Build a production bundle                    |
 | `pnpm serve`        | Start local server to test production bundle |
 | `pnpm build&serve`  | Two of the above commands combined           |

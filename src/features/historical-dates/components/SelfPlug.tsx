@@ -5,7 +5,7 @@ import type { ClassProps } from "@/core/types";
 import React from "react";
 import { css } from "styled-components";
 
-const repoUrl = "https://github.com/arslan-charyyev/historic-dates?tab=readme-ov-file";
+const repoUrl = "https://github.com/arslan-charyyev/historic-dates#readme";
 
 export function SelfPlug(props: ClassProps) {
   const device = useAppDevice();
