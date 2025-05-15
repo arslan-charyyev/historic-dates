@@ -48,13 +48,13 @@ The development server will be available at: http://localhost:8080
 
 #### Miscellaneous
 
-| Command             | Description                                  |
-|---------------------|----------------------------------------------|
-| `pnpm build`        | Build a production bundle                    |
-| `pnpm serve`        | Start local server to test production bundle |
-| `pnpm build&serve`  | Two of the above commands combined           |
-| `pnpm format:check` | Check formatting issues in project           |
-| `pnpm format:fix`   | Fix formatting issues in project             |
+| Command            | Description                                  |
+|--------------------|----------------------------------------------|
+| `pnpm build`       | Build a production bundle                    |
+| `pnpm serve`       | Start local server to test production bundle |
+| `pnpm build&serve` | Two of the above commands combined           |
+| `pnpm format`      | Fix formatting issues in the project         |
+| `pnpm lint`        | Check code issues in the project             |
 
 #### Build website bundle
 
