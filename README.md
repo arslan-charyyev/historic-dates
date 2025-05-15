@@ -1,5 +1,10 @@
 # Assignment submission for [onlydigital.ru](https://onlydigital.ru)
 
+> [!NOTE]
+> 🚀 Check out the deployed project at:
+>
+> https://arslan-charyyev.github.io/historic-dates/
+
 ## 📚 Tech Stack
 
 - Webpack
