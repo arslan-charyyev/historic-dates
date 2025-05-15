@@ -7,13 +7,13 @@ import { Title } from "@/features/historical-dates/components/Title.tsx";
 import { YearRange } from "@/features/historical-dates/components/YearRange.tsx";
 import { useCategoryData } from "@/features/historical-dates/utils/category-data";
 import { horizontalLines, verticalLines } from "@/features/historical-dates/utils/line-styles.ts";
-import { useSliderController } from "@/features/historical-dates/utils/slider-controller.ts";
+import { useDialController } from "@/features/historical-dates/utils/dial-controller.ts";
 import React from "react";
 import styled, { css } from "styled-components";
 
 export function HistoricalDatesDesktop(props: { data: HistoricalCategory[] }) {
-  const slides = useSliderController(props.data);
-  const { activeCategory, yearStart, yearEnd } = useCategoryData(props.data, slides);
+  const dialController = useDialController(props.data);
+  const { activeCategory, yearStart, yearEnd } = useCategoryData(props.data, dialController);
 
   return (
     <Root>
@@ -24,8 +24,13 @@ export function HistoricalDatesDesktop(props: { data: HistoricalCategory[] }) {
             <Title css={styles.title} />
           </TitleContainer>
           <YearRange css={styles.yearRange} start={yearStart} end={yearEnd} />
-          <CategoryNavArrows controller={slides} css={styles.slideControls} />
-          <CategoryDial slides={slides} items={props.data} radius={192} selectedAngle={90 / 4} />
+          <CategoryNavArrows controller={dialController} css={styles.slideControls} />
+          <CategoryDial
+            controller={dialController}
+            items={props.data}
+            radius={192}
+            selectedAngle={90 / 4}
+          />
         </DialContainer>
         <DesktopSlideSwiper events={activeCategory.events} />
       </BackgroundContainer>

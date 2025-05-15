@@ -3,11 +3,11 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@/core/components/Icons.tsx";
 import { Text } from "@/core/components/Text.tsx";
 import { type AppDevice, useAppDevice } from "@/core/device";
 import { ClassProps } from "@/core/types.ts";
-import type { SliderController } from "@/features/historical-dates/utils/slider-controller.ts";
+import type { DialController } from "@/features/historical-dates/utils/dial-controller.ts";
 import React from "react";
 import styled from "styled-components";
 
-export function CategoryNavArrows(props: { controller: SliderController } & ClassProps) {
+export function CategoryNavArrows(props: { controller: DialController } & ClassProps) {
   const { controller } = props;
   const device = useAppDevice();
 

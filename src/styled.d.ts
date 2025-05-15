@@ -8,7 +8,6 @@ declare module "styled-components" {
 
   export interface FontSettings {
     fontSize: string;
-    fontWeight?: FontWeights;
     // Other props likes line-height could go here
   }
 

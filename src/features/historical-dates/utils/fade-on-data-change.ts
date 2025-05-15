@@ -24,7 +24,11 @@ export function useFadeOnDataChange<T>(data: T) {
 
         // Fade in new items
         if (!fadeElementRef.current) return;
-        gsap.to(fadeElementRef.current?.children, { opacity: 1, duration: 0.5, stagger: 0.1 });
+        gsap.to(fadeElementRef.current?.children, {
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.1,
+        });
       },
     });
   }, [data]);

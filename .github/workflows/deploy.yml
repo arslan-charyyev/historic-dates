@@ -2,11 +2,11 @@ name: 🌐 Deploy site to Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
     paths-ignore:
-      - 'README.md'
-      - '.devcontainer/**'
-      - '.vscode/**'
+      - "README.md"
+      - ".devcontainer/**"
+      - ".vscode/**"
 
   workflow_dispatch:
 
@@ -23,7 +23,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     name: 🏗️ Build
     runs-on: ubuntu-24.04
@@ -59,7 +58,6 @@ jobs:
         with:
           path: dist
 
-  # Deployment job
   deploy:
     name: 🚀 Deploy
     environment:

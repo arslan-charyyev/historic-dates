@@ -1,12 +1,12 @@
 import { HistoricalCategory } from "@/core/data";
-import type { SliderController } from "@/features/historical-dates/utils/slider-controller";
+import type { DialController } from "@/features/historical-dates/utils/dial-controller";
 import { useMemo } from "react";
 
 /**
  * A hook for deriving stateful UI info from source data
  */
-export function useCategoryData(data: HistoricalCategory[], slider: SliderController) {
-  const activeCategory = useMemo(() => data[slider.currentIndex], [slider.currentIndex]);
+export function useCategoryData(data: HistoricalCategory[], controller: DialController) {
+  const activeCategory = useMemo(() => data[controller.currentIndex], [controller.currentIndex]);
 
   const [yearStart, yearEnd]: [number, number] = useMemo(() => {
     const sortedEvents = activeCategory.events.sort((a, b) => a.year - b.year);

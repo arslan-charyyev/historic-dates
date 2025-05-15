@@ -3,7 +3,7 @@ import { useState } from "react";
 /**
  * A hook for working with category sliders like the `CategoryDial` or `NavControls`.
  */
-export function useSliderController(data: unknown[]) {
+export function useDialController(data: unknown[]) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return {
@@ -18,4 +18,4 @@ export function useSliderController(data: unknown[]) {
   };
 }
 
-export type SliderController = ReturnType<typeof useSliderController>;
+export type DialController = ReturnType<typeof useDialController>;

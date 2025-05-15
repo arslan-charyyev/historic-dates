@@ -1,14 +1,14 @@
 import { CircleButton } from "@/core/components/CircleButton";
 import { Text } from "@/core/components/Text";
 import type { HistoricalCategory } from "@/core/data";
-import type { SliderController } from "@/features/historical-dates/utils/slider-controller";
+import type { DialController } from "@/features/historical-dates/utils/dial-controller";
 import { gsap } from "gsap";
 import { rgba } from "polished";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 export function CategoryDial(props: {
-  slides: SliderController;
+  controller: DialController;
   items: HistoricalCategory[];
   radius: number;
   selectedAngle: number;
@@ -77,8 +77,8 @@ export function CategoryDial(props: {
   };
 
   useEffect(() => {
-    rotateDialTo(props.slides.currentIndex);
-  }, [props.slides.currentIndex]);
+    rotateDialTo(props.controller.currentIndex);
+  }, [props.controller.currentIndex]);
 
   return (
     // Root div wrapper absorbs padding set by parent
@@ -90,13 +90,13 @@ export function CategoryDial(props: {
         {props.items.map((item, i) => (
           <DialButtonContainer
             key={i}
-            $selected={i === props.slides.currentIndex}
+            $selected={i === props.controller.currentIndex}
             ref={(element) => {
               if (!element) return;
               buttonRefs.current[i] = element;
             }}
           >
-            <DialButton onClick={() => props.slides.goTo(i)}>
+            <DialButton onClick={() => props.controller.goTo(i)}>
               <Text $centered $noSelect>
                 {i + 1}
               </Text>

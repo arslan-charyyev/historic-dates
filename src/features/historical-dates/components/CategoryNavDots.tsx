@@ -1,10 +1,10 @@
 import { ClassProps } from "@/core/types.ts";
-import type { SliderController } from "@/features/historical-dates/utils/slider-controller.ts";
+import type { DialController } from "@/features/historical-dates/utils/dial-controller.ts";
 import { rgba } from "polished";
 import React, { useMemo } from "react";
 import styled from "styled-components";
 
-export function CategoryNavDots(props: { controller: SliderController } & ClassProps) {
+export function CategoryNavDots(props: { controller: DialController } & ClassProps) {
   const { controller } = props;
 
   // [0, 1, 2, ..., controller.totalCount-1]

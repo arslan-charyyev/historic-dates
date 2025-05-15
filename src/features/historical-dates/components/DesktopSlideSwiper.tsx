@@ -10,19 +10,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export function DesktopSlideSwiper(props: { events: HistoricalEvent[] }) {
   const { fadeRef, displayData } = useFadeOnDataChange(props.events);
-  const swiper = useSwiperController(displayData);
+  const swiperController = useSwiperController(displayData);
 
   return (
     <div css={styles.root} ref={fadeRef}>
-      <NavButton onClick={swiper.slidePrev} $hidden={swiper.isBeginning}>
+      <NavButton onClick={swiperController.slidePrev} $hidden={swiperController.isBeginning}>
         <ChevronLeftIcon />
       </NavButton>
       <Swiper
         grabCursor
-        onBeforeInit={swiper.onBeforeInit}
-        onSlideChange={swiper.onSlideChange}
-        onFromEdge={swiper.onSlideChange}
-        onToEdge={swiper.onSlideChange}
+        onBeforeInit={swiperController.onBeforeInit}
+        onSlideChange={swiperController.onSlideChange}
+        onFromEdge={swiperController.onSlideChange}
+        onToEdge={swiperController.onSlideChange}
         spaceBetween="64px"
         slidesPerView="auto"
       >
@@ -32,7 +32,7 @@ export function DesktopSlideSwiper(props: { events: HistoricalEvent[] }) {
           </SwiperSlide>
         ))}
       </Swiper>
-      <NavButton onClick={swiper.slideNext} $hidden={swiper.isEnd}>
+      <NavButton onClick={swiperController.slideNext} $hidden={swiperController.isEnd}>
         <ChevronRightIcon />
       </NavButton>
     </div>

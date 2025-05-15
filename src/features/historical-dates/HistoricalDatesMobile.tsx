@@ -8,7 +8,7 @@ import { Title } from "@/features/historical-dates/components/Title";
 import { YearRange } from "@/features/historical-dates/components/YearRange";
 import { useCategoryData } from "@/features/historical-dates/utils/category-data";
 import { useFadeOnDataChange } from "@/features/historical-dates/utils/fade-on-data-change";
-import { useSliderController } from "@/features/historical-dates/utils/slider-controller";
+import { useDialController } from "@/features/historical-dates/utils/dial-controller";
 import { useSwiperController } from "@/features/historical-dates/utils/swiper-controller";
 import { rgba } from "polished";
 import React from "react";
@@ -16,10 +16,12 @@ import styled, { css } from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export function HistoricalDatesMobile(props: { data: HistoricalCategory[] }) {
-  const categorySlider = useSliderController(props.data);
-  const { activeCategory, yearStart, yearEnd } = useCategoryData(props.data, categorySlider);
+  // Even though there is no dial on mobile, we still keep the naming
+  // to distinguish it from the swiper controller
+  const dialController = useDialController(props.data);
+  const { activeCategory, yearStart, yearEnd } = useCategoryData(props.data, dialController);
   const { fadeRef, displayData: displayCategory } = useFadeOnDataChange(activeCategory);
-  const swiper = useSwiperController(displayCategory);
+  const swiperController = useSwiperController(displayCategory);
 
   return (
     <div css={styles.root}>
@@ -35,12 +37,12 @@ export function HistoricalDatesMobile(props: { data: HistoricalCategory[] }) {
           {displayCategory.name}
         </Text>
         <div>
-          {/*Div wrapper here absorbs padding*/}
+          {/* Div wrapper here absorbs padding */}
           <Divider />
         </div>
         <Swiper
           grabCursor
-          onBeforeInit={swiper.onBeforeInit}
+          onBeforeInit={swiperController.onBeforeInit}
           spaceBetween="32px"
           slidesPerView={"auto"}
         >
@@ -52,8 +54,8 @@ export function HistoricalDatesMobile(props: { data: HistoricalCategory[] }) {
         </Swiper>
       </div>
       <div css={styles.categoryNavControls}>
-        <CategoryNavArrows css={styles.categoryNavArrows} controller={categorySlider} />
-        <CategoryNavDots css={styles.categoryNavDots} controller={categorySlider} />
+        <CategoryNavArrows css={styles.categoryNavArrows} controller={dialController} />
+        <CategoryNavDots css={styles.categoryNavDots} controller={dialController} />
       </div>
     </div>
   );
