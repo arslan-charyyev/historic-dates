@@ -1,4 +1,4 @@
-name: 🌐 Deploy site to Pages
+name: 🌐 Deploy site to GitHub Pages
 
 on:
   push:
@@ -29,11 +29,6 @@ jobs:
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Not needed if lastUpdated is not enabled
-
-      - name: 🛠️ Setup pnpm
-        uses: pnpm/action-setup@v4
 
       - name: 🛠️ Setup Node.js
         uses: actions/setup-node@v4
@@ -41,8 +36,8 @@ jobs:
           node-version: 24
           cache: pnpm
 
-      - name: 🛠️ Setup Pages
-        uses: actions/configure-pages@v4
+      - name: 🛠️ Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: 📚 Install dependencies
         run: pnpm install
@@ -52,6 +47,9 @@ jobs:
 
       - name: 🏗️ Build with webpack
         run: pnpm build
+
+      - name: 🛠️ Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: 📤 Upload artifact
         uses: actions/upload-pages-artifact@v3
