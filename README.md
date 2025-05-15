@@ -12,6 +12,9 @@
 - TypeScript
 - React.js
 - Styled Components
+- GSAP
+- Prettier
+- ESLint
 
 ## ☁️ Remote development
 
@@ -38,6 +41,8 @@ pnpm dev
 ```
 
 Or hit the `start` Run/Debug Configuration if working in a Jetbrains IDE.
+
+The development server will be available at: http://localhost:8080
 
 #### Miscellaneous
 

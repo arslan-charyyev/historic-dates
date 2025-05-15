@@ -1,5 +1,11 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:latest",
-  "features": {},
-  "postStartCommand": "pnpm install --offline"
+  "name": "Node.js v24 with pnpm",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24",
+      "pnpmVersion": "latest"
+    }
+  },
+  "postCreateCommand": "pnpm install"
 }
