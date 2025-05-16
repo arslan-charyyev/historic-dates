@@ -1,4 +1,4 @@
-# Assignment submission for [onlydigital.ru](https://onlydigital.ru)
+# Assignment submission
 
 [![badge](https://github.com/arslan-charyyev/historic-dates/actions/workflows/deploy.yml/badge.svg)](https://github.com/arslan-charyyev/historic-dates/actions/workflows/deploy.yml)
 ![GitHub License](https://img.shields.io/github/license/arslan-charyyev/historic-dates)
